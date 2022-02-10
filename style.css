@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+    background-color: antiquewhite;
+}
+
+main h1 {
+    display: flex;
+    padding: 0 .5em;
+    justify-content: center;
+    font-size: 2.5em;
+    font-family: sans-serif;
+}
+
+main ul {
+    display: grid;
+    padding: 0;
+    list-style: none;
+    grid-template-columns: 50% 50%;
+    column-gap: 1em;
+    row-gap: 1em;
+    width: 96.5%;
+    padding: 1em;
+}
+
+main ul li a{
+    width: 40%;
+    height: 10em;
+    background-color: black;
+}
+
+img {
+    width: 100%;
+    transition: 300ms;
+}
+
+a:hover img {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 5px black;
+}
