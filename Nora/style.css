@@ -1,0 +1,78 @@
+ 
+@property --myColor1 {
+    syntax: '<color>';
+    initial-value: rgb(63, 63, 63);
+    inherits: false;
+  }
+  
+@property --myColor2 {
+    syntax: '<color>';
+    initial-value: rgb(255, 255, 255);
+    inherits: false;
+}
+
+@property --myColor3 {
+    syntax: '<color>';
+    initial-value: rgb(233, 0, 0);
+    inherits: false;
+}
+
+html {
+    min-height: 100%; 
+}
+
+body {
+    position: relative;
+    overflow: hidden;
+}
+
+div {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background: repeating-radial-gradient(circle, var(--myColor1), var(--myColor2), var(--myColor3) 10px);
+    background-size: 100px 100px;
+     animation: circle 1s ease-in-out infinite; 
+    transition: --myColor1 1s, --myColor2 1s, --myColor3 1s, --myColor4 1s, --myColor5 1s;
+}
+
+div:hover {
+    --myColor1: rgb(233, 0, 0);;
+    --myColor2:  rgb(255, 238, 0);;
+    --myColor3:  rgb(1, 94, 216);;
+    --myColor4: rgb(6, 175, 0);;
+    --myColor5: rgb(255, 145, 0);;
+}
+
+
+
+@keyframes circle {
+    0%{
+        transform:scale(1);
+     
+    --myColor3: rgb(233, 0, 0);;
+    --myColor4:  rgb(255, 238, 0);;
+    --myColor5: rgb(1, 94, 216);;
+    --myColor1:  rgb(6, 175, 0);;
+    --myColor2: rgb(255, 145, 0);;
+    }
+
+    50% {
+        transform: scale(1.1);
+        
+    --myColor5:  rgb(255, 238, 0);;
+    --myColor3: rgb(255, 145, 0);;
+    --myColor1: rgb(233, 0, 0);;
+    --myColor2:  rgb(1, 94, 216);;
+    --myColor4: rgb(6, 175, 0);;
+    }
+    100% {
+        transform:scale(1);
+        --myColor1: rgb(233, 0, 0);;
+        --myColor5: rgb(1, 94, 216);;
+        --myColor4: rgb(6, 175, 0);;
+        --myColor2: rgb(255, 145, 0);;
+        --myColor3: rgb(255, 238, 0);;
+        
+        }
+}
